@@ -78,3 +78,60 @@ of the tests in your project following these instructions:
 4. Watch your browser dance
 
 ## The theory
+
+### Test vs Checking
+
+Remember that automation isn't a replacement for testing.  It's a great way to express our existing knowledge about an application
+that we're testing and then check it super quickly.  But, if an application is changed in the way it works (new features, 
+bug fixes, configuration changes, deployment changes) then our automation isn't quite complete, because, the system is different
+and we can longer rely on our knowledge ON ITS OWN.  We have to do something else as well.
+
+This is where the difference between Testing and Checking comes in.
+
+Test is defined by James Bach as:
+
+"Testing is the process of evaluating a product by learning about it through exploration and experimentation, which 
+includes to some degree: questioning, study, modelling, observation, inference, etc."
+
+Checking is defined by James Bach as:
+
+"Checking is the process of making evaluations by applying algorithmic decision rules to specific observations of a product."
+
+So, automation is therefore incapable of testing by it's very nature.  Automation is powerful, we need it, but
+be careful with it and ensure you understand it's limitations.
+
+### Automation via the UI
+
+Checking in the UI is meant to represent the smallest number or percentage of checks in our automation approach.
+Typically, it's suggested that around 5-10% of all automated checking is completed in the UI.
+
+This is because:
+
+- it's brittle (pages change all the time)
+- it's slow (we're simulating a user, users are slow)
+- it's a pain in the ass to keep up-to-date
+
+Many people invest an inverse amount of time to their UI checks, relative to the strategic goals of 5-10%.
+
+Good things to avoid in UI checking:
+
+- don't write a check for each acceptance criteria, focus instead on end-to-end journeys or complete scenarios
+- in your scenarios, encompass negative checks that you want to do, don't write explicit checks for them
+- `Thread.sleep` (read the framework documentation to learn how to avoid this)
+
+### The Page Object Model
+
+The Page Object Model is a design pattern.  Design patterns in programming help us solve common problems in common ways
+following similar approaches that have worked for similar problems that others have faced.
+
+The Page Object Model is super straight forward; one class typically represents one page in the application under test.  This is
+known as the Page Object.
+
+Page Objects encapsulate actions and elements.  Elements are private.  And actions are public.  This allows callers to see 
+all of the actions that they can take on a page, without having to be exposed to the complexity "under the hood".
+
+There's an important (and often overlooked) aspect of the Page Object Model design pattern, and it really makes tests
+super tidy and really easy for less experienced people to use, and it's this; Page Object actions should return to the caller
+a Page Object that the caller will end up on as a result of the action.  If the caller will stay where they are, then
+the action should `return this`.  If it will move the application under test to a new page, then it should return a Page Object
+that represents the new page, so the action should `return new PageObjectThatWeEndUpOn()`.  
