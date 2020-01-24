@@ -9,6 +9,10 @@
 
 ## Getting started
 
+There are some things that you need to install if you've never done this sort of thing before.  You're going to need
+`Maven` and `Java` environment and IDE (like IntelliJ).  We've got a guide to getting started in the frameworks documentation
+which you can find right here: https://github.com/digital-delivery-academy/selenium-pom-framework/wiki/1.-Getting-Started
+
 You need to tell Maven how to access GitHub packages.  So you need to edit your `settings.xml`.
 
 Typically you can do this by looking in `~/.m2/settings.xml`.  You will need a GitHub Personal Access Token, which
@@ -57,3 +61,20 @@ An example configuration (`settings.xml`) would be:
     </servers>
 </settings>
 ```
+## Running the tests
+
+There are two main ways that you'd typically run tests like this; from your machine while you're building things, and
+from something like Travis or Jenkins etc (Continuous Integration tooling).
+
+The tests themselves use a harness called JUnit underneath, and modern IDEs like IntelliJ know all about JUnit and how 
+to run things in a nice way from your IDE.
+
+The other way to run things is from `Maven`.  `Maven` is a build and dependency tool for Java applications.  To run all 
+of the tests in your project following these instructions:
+
+1. Open a Terminal window/session
+2. Navigate to the project directory (hint: in IntelliJ, you can open a Terminal session that will start from the project directory)
+3. Type the following: `mvn clean test`
+4. Watch your browser dance
+
+## The theory

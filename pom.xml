@@ -18,7 +18,9 @@
     </contributors>
 
     <description>
-        An example of writing automated UI checks with Selenium utilising the selenium-pom-framework
+        An example of how to write tests using the https://github.com/digital-delivery-academy/selenium-pom-framework.
+        This is the place to start if you need to write Selenium tests and want to use a super robust toolkit that
+        takes care of all of the heavy lifting for you.
     </description>
 
     <issueManagement>
