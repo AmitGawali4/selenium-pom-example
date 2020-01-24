@@ -1,5 +1,7 @@
 # selenium-pom-example
 
+[![Build Status](https://travis-ci.com/digital-delivery-academy/selenium-pom-exampe.svg?branch=master)](https://travis-ci.com/digital-delivery-academy/selenium-pom-exampe)
+
 ## Documentation
 
 - A full reference guide is here: https://github.com/digital-delivery-academy/selenium-pom-framework/wiki
