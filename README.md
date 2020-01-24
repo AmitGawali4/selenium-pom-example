@@ -1,6 +1,7 @@
 # selenium-pom-example
 
 [![Build Status](https://travis-ci.com/digital-delivery-academy/selenium-pom-exampe.svg?branch=master)](https://travis-ci.com/digital-delivery-academy/selenium-pom-exampe)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a4ef36d50ff44f9abee05b81921e7ff8)](https://www.codacy.com/gh/digital-delivery-academy/selenium-pom-example?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=digital-delivery-academy/selenium-pom-example&amp;utm_campaign=Badge_Grade)
 
 ## Documentation
 
