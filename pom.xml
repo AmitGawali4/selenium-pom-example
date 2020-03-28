@@ -6,22 +6,41 @@
 
     <groupId>org.example</groupId>
     <artifactId>selenium-pom-example</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
-    <contributors>
-        <contributor>
-            <name>Steve Walton</name>
-            <email>steve.walton@evoco.co.uk</email>
-            <organization>Evoco</organization>
-            <organizationUrl>https://www.evoco.co.uk</organizationUrl>
-        </contributor>
-    </contributors>
+    <name>Selenium POM Example</name>
+    <url>https://www.github.com/digital-delivery-academy/selenium-pom-framework</url>
+
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://github.com/digital-delivery-academy/selenium-pom-example/blob/master/LICENSE</url>
+        </license>
+    </licenses>
 
     <description>
         An example of how to write tests using the https://github.com/digital-delivery-academy/selenium-pom-framework.
         This is the place to start if you need to write Selenium tests and want to use a super robust toolkit that
         takes care of all of the heavy lifting for you.
     </description>
+
+    <developers>
+        <developer>
+            <name>Steve Walton</name>
+            <url>https://www.evoco.co.uk</url>
+            <organizationUrl>https://www.evoco.co.uk</organizationUrl>
+            <organization>Evoco Digital Services</organization>
+        </developer>
+    </developers>
+
+    <contributors>
+        <contributor>
+            <name>Steve Walton</name>
+            <email>steve.walton@evoco.co.uk</email>
+            <organization>Evoco Digital Services</organization>
+            <organizationUrl>https://www.evoco.co.uk</organizationUrl>
+        </contributor>
+    </contributors>
 
     <issueManagement>
         <system>GitHub</system>
@@ -32,7 +51,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>12</maven.compiler.source>
         <maven.compiler.target>12</maven.compiler.target>
-        <selenium-pom-framework.version>0.0.5</selenium-pom-framework.version>
+        <selenium-pom-framework.version>1.0.9</selenium-pom-framework.version>
         <maven.compiler.version>3.8.1</maven.compiler.version>
         <maven.surefire.version>2.22.2</maven.surefire.version>
     </properties>
