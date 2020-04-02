@@ -8,7 +8,7 @@
     "sample": "sample text"
   },
   "gridConfig": {
-    "url": "http://localhost:4444/wd/hub"
+    "url": "http://selenium-hub:4444/wd/hub"
   },
   "browserPreferences": {
     "firefox": {

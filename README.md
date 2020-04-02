@@ -1,14 +1,14 @@
 # selenium-pom-example
+// TODO: Re-add badges
 
-[![Build Status](https://travis-ci.com/digital-delivery-academy/selenium-pom-example.svg?branch=master)](https://travis-ci.com/digital-delivery-academy/selenium-pom-example)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a4ef36d50ff44f9abee05b81921e7ff8)](https://www.codacy.com/gh/digital-delivery-academy/selenium-pom-example?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=digital-delivery-academy/selenium-pom-example&amp;utm_campaign=Badge_Grade)
+## Getting started
 
-## Documentation
+### Documentation
 
-- A full reference guide is here: https://github.com/digital-delivery-academy/selenium-pom-framework/wiki
+- A full reference guide is here (more work is needed here, and it's coming!): https://github.com/digital-delivery-academy/selenium-pom-framework/wiki
 - Technical reference documentation (javadocs) are here: https://digital-delivery-academy.github.io/selenium-pom-framework/javadoc-1.0.9
 
-## Running the tests
+### Running the tests
 
 There are two main ways that you'd typically run tests like this; from your machine while you're building things, and
 from something like Travis or Jenkins etc (Continuous Integration tooling).
@@ -23,6 +23,31 @@ of the tests in your project following these instructions:
 2. Navigate to the project directory (hint: in IntelliJ, you can open a Terminal session that will start from the project directory)
 3. Type the following: `mvn clean test`
 4. Watch your browser dance
+
+### Running with Selenium Grid
+
+Take a look in the `scripts/` directory and you'll see some `bash` scripts and a `docker-compose` YAML configuration file.
+
+To start a Selenium Grid that is run in `docker` with attached nodes, all you need to do is run the `./start-docker-selenium-grid.sh`.  And to stop the containers,
+just run the `./stop-docker-selenium-grid.sh`.
+
+Remember that you need to switch up the options in your `config.json` file to switch the `runType` from `LOCAL` to `GRID`. 
+
+### Running your tests from Docker
+
+We supply a `Dockerfile` that will create an image for your to build containers from specifically for running your tests inside Docker.  This can be done locally and from a pipeline of course.
+If you're intending to use Docker builds in your pipeline, probably best to run from a docker container locally as well to keep everything consistent.
+
+The container will start with Firefox and Chrome installed.
+
+First up, let's create the Docker image from the `Dockerfile` that's in the root of the repo.
+`docker build --tag mvn .`
+
+Once that's complete, we can run our tests with it:
+`docker run -it --net grid --rm -v "$PWD"/target:/usr/src/app/target mvn test`
+
+Note: Every time your code changes you need to run (it's super quick):
+`docker build --tag mvn .`
 
 ## The theory
 
