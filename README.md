@@ -41,12 +41,15 @@ If you're intending to use Docker builds in your pipeline, probably best to run 
 The container will start with Firefox and Chrome installed.
 
 First up, let's create the Docker image from the `Dockerfile` that's in the root of the repo.
+
 `docker build --tag mvn .`
 
 Once that's complete, we can run our tests with it:
+
 `docker run -it --net grid --rm -v "$PWD"/target:/usr/src/app/target mvn test`
 
 Note: Every time your code changes you need to run (it's super quick):
+
 `docker build --tag mvn .`
 
 ## The theory
