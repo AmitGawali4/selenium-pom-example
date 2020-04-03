@@ -6,7 +6,7 @@
 ### Documentation
 
 - A full reference guide is here (more work is needed here, and it's coming!): https://github.com/digital-delivery-academy/selenium-pom-framework/wiki
-- Technical reference documentation (javadocs) are here: https://digital-delivery-academy.github.io/selenium-pom-framework/javadoc-1.0.9
+- Technical reference documentation (javadocs) are here: https://digital-delivery-academy.github.io/selenium-pom-framework/javadoc-1.0.10
 
 ### Running the tests
 
